@@ -7,4 +7,3 @@
 *.xml
 *.container
 *.name
-build/classes/com/cs336/pkg/ApplicationDB.class
