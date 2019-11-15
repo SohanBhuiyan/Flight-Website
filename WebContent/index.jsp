@@ -35,14 +35,16 @@ Hello World1 <!-- the usual HTML way -->
 </form>
 <br>
 
-<form action="">
+<!-- Show Login Interface with submit button -->
+<form action="login">
 Username: <input type="text"  name="username">
 <br>
 Password: <input type="text" name="password">
 <br>
-<input type="submit">
-
+<input type="submit" name="loginBtn" value="login">
+<input type="submit" name="createBtn" value="create new account">
 </form>
+
 A bar wants to sell a beer! Type the bar, the beer and the price of the beer:
 <br>
 	<form method="post" action="sellsNewBeer.jsp">
