@@ -36,7 +36,7 @@ Hello World1 <!-- the usual HTML way -->
 <br>
 
 <!-- Show Login Interface with submit button -->
-<form action="login">
+<form action="login.jsp" method="post">
 Username: <input type="text"  name="username">
 <br>
 Password: <input type="text" name="password">
