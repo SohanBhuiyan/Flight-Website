@@ -39,7 +39,7 @@ Hello World1 <!-- the usual HTML way -->
 <form action="login.jsp" method="post">
 Username: <input type="text"  name="username">
 <br>
-Password: <input type="text" name="password">
+Password: <input type="password" name="password">
 <br>
 <input type="submit" name="loginBtn" value="login">
 <input type="submit" name="createBtn" value="create new account">
