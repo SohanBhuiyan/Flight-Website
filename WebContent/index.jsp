@@ -35,6 +35,13 @@ Hello World1 <!-- the usual HTML way -->
 </form>
 <br>
 
+<!-- Notifies client of incorrect credentials -->
+<%
+Object i = session.getAttribute("loginAccess");
+if(i != null && i.equals("faild")){
+	out.print("Incorrect username and/or password");
+}
+%>
 <!-- Show Login Interface with submit button -->
 <form action="login.jsp" method="post">
 Username: <input type="text"  name="username">
