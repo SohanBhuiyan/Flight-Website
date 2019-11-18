@@ -10,6 +10,12 @@
 </head>
 <body>
 	<%
+	
+	String action = request.getParameter("action");
+
+	
+	// depending on whether the user wants login or register, different segment of the code will run. 
+	if ("login".equals(action)) {
 		String username = request.getParameter("username"); 
 		String password = request.getParameter("password"); 
 		 
@@ -21,7 +27,18 @@
 			session.setAttribute("loginAccess", "faild"); 
 			response.sendRedirect(redirectURL);
 		}
-
+	} else if ("Create new account".equals(action)) {
+		
+	}
+		
+			
+		
+		
+	
+		
+		
+		
+	
 	%>
 	
 
