@@ -21,6 +21,9 @@
 		
 		if(hasAccount(username,password)){
 			out.print("Successfully Signed in");
+			//to send to welcome page 
+			
+			response.sendRedirect("welcome.jsp");
 	
 		}else{ // if no account exists, redirect back to login page
 			String redirectURL = "index.jsp";
@@ -28,25 +31,20 @@
 			response.sendRedirect(redirectURL);
 		}
 	} else if ("Create new account".equals(action)) {
+		String redirectURL = "index.jsp";
+		
 		if(containsUsername(username)){
 			out.print("Account Exist, try again");
+			session.setAttribute("registration", "faild"); 
+			response.sendRedirect(redirectURL);
 	
 		}else{ // if no account exists, redirect back to login page
 			createAccount(username,password); 
-			String redirectURL = "index.jsp";
-			session.setAttribute("loginAccess", "faild"); 
+			session.setAttribute("registration", "success"); 
 			response.sendRedirect(redirectURL);
 		}
 	}
 		
-			
-		
-		
-	
-		
-		
-		
-	
 	%>
 	
 
@@ -83,7 +81,6 @@
 		return false; 
 		
 	}
-
 public boolean containsUsername(String username){
 	
 	try{
@@ -112,8 +109,6 @@ public boolean containsUsername(String username){
 	
 	return false; 
 }
-
-
 private void createAccount(String username, String password){
 	try{
 	//connection setup
@@ -131,7 +126,6 @@ private void createAccount(String username, String password){
 					+ "VALUES (?,?)";
 			//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 			PreparedStatement ps = con.prepareStatement(insert);
-
 			//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
 			ps.setString(1, username);
 			ps.setString(2, password); 
