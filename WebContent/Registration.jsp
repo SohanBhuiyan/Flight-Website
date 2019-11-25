@@ -17,9 +17,9 @@ Password: <input type="password" name="password">
 
 User-Type
 <select name="userType">
-  <option value="volvo">customer</option>
-  <option value="saab">customer-rep</option>
-  <option value="opel">admin</option>
+  <option value="customer">customer</option>
+  <option value="customer-rep">customer-rep</option>
+  <option value="admin">admin</option>
 </select>
 
 
