@@ -4,6 +4,6 @@
 .settings/.jsdtscope
 *.prefs
 *.component
-*.xml
 *.container
 *.name
+.settings/org.eclipse.wst.common.project.facet.core.xml

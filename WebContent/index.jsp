@@ -30,9 +30,9 @@ if(registrationStatus != null && registrationStatus.equals("success"))
 if(registrationStatus != null && registrationStatus.equals("faild")) 
 	out.print("Username taken. Try a different name. ");
 
-
-
 %>
+
+
 <!-- Show Login Interface with submit button -->
 <form action="login.jsp" method="post">
 Username: <input type="text"  name="username">
