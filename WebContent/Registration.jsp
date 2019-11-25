@@ -15,6 +15,13 @@ Password: <input type="password" name="password">
 <br>
 <input type="submit" name="action" value="Create new account">
 
+User-Type
+<select name="userType">
+  <option value="volvo">customer</option>
+  <option value="saab">customer-rep</option>
+  <option value="opel">admin</option>
+</select>
+
 
 </form>
 </body>
