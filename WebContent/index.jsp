@@ -34,6 +34,7 @@ if(registrationStatus != null && registrationStatus.equals("faild"))
 
 %>
 <!-- Show Login Interface with submit button -->
+<h2>Please enter your credential</h2>
 <form action="login.jsp" method="post">
 Username: <input type="text"  name="username">
 <br>
