@@ -15,6 +15,13 @@ Password: <input type="password" name="password">
 <br>
 <input type="submit" name="action" value="Create new account">
 
+User-Type
+<select name="userType">
+  <option value="customer">customer</option>
+  <option value="customer-rep">customer-rep</option>
+  <option value="admin">admin</option>
+</select>
+
 
 </form>
 </body>
