@@ -5,33 +5,6 @@ import javax.servlet.*;
 import java.sql.*;
 
 public class Util {
-
-	public void createAccount(String username, String password, String userType){
-		try{
-		//connection setup
-		ApplicationDB db = new ApplicationDB();	
-		Connection con = db.getConnection();
-		Statement stmt = con.createStatement();
-		
-		String insert = "INSERT INTO users(username,password,type)"
-						+ "VALUES (?,?,?)";
-		
-		//Create a Prepared SQL statement allowing you to introduce the parameters of the query
-		PreparedStatement ps = con.prepareStatement(insert);
-		//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
-		ps.setString(1, username);
-		ps.setString(2, password); 
-		ps.setString(3, userType);
-		ps.executeUpdate();
-		con.close();
-		
-	} catch(Exception ex){ // tells the classname::methodname when a method fails. Easier for debugging
-		String currMethodName = new Object() {}.getClass().getEnclosingMethod().getName(); 
-		System.out.println(this.getClass().getSimpleName() +"::" + currMethodName  + "  faild"); 
-	}
-	}
-	
-	
 	
 	public boolean containsUsername(String username){
 		
