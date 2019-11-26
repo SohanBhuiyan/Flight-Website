@@ -26,12 +26,11 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password"); 
 	
 		if(action != null){
-			
+			//check if username already exists
 			if(helper.containsUsername(username)){
-				out.print("Account Exist, try again");
 				session.setAttribute("registration", "faild"); 
 
-			}else{ // if no account exists, redirect back to login page
+			}else{ // if no account exists, create the account and redirect back to the login page
 				helper.createAccount(username,password); 
 				session.setAttribute("registration", "success"); 
 			}
