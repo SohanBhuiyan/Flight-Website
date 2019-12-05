@@ -17,7 +17,7 @@
 	String password = request.getParameter("password"); 
 	
 	// depending on whether the user wants login or register, different segment of the code will run. 
-	if ("login".equals(action)) {
+	if (action.equals("login")) {
 		
 		if(hasAccount(username,password)){
 			out.print("Successfully Signed in");
@@ -43,6 +43,7 @@
 			session.setAttribute("registration", "success"); 
 			response.sendRedirect(redirectURL);
 		}
+	} else if (action.equals("Create new account")) {
 	}
 		
 	%>
