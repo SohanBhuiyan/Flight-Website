@@ -11,6 +11,7 @@
 <body>
 	<%
 	
+	Util helper = new Util();
 	String action = request.getParameter("action");
 	
 	String username = request.getParameter("username"); 
@@ -19,10 +20,8 @@
 	// depending on whether the user wants login or register, different segment of the code will run. 
 	if (action.equals("login")) {
 		
-		if(hasAccount(username,password)){
-			out.print("Successfully Signed in");
+		if(helper.hasAccount(username,password)){
 			//to send to welcome page 
-			
 			response.sendRedirect("welcome.jsp");
 	
 		}else{ // if no account exists, redirect back to login page
@@ -30,20 +29,10 @@
 			session.setAttribute("loginAccess", "faild"); 
 			response.sendRedirect(redirectURL);
 		}
-	} else if ("Create new account".equals(action)) {
-		String redirectURL = "index.jsp";
-		
-		if(containsUsername(username)){
-			out.print("Account Exist, try again");
-			session.setAttribute("registration", "faild"); 
-			response.sendRedirect(redirectURL);
-	
-		}else{ // if no account exists, redirect back to login page
-			createAccount(username,password); 
-			session.setAttribute("registration", "success"); 
-			response.sendRedirect(redirectURL);
-		}
 	} else if (action.equals("Create new account")) {
+				// user clicked create new acccount
+				String redirectURL = "Registration.jsp";
+				response.sendRedirect(redirectURL);
 	}
 		
 	%>
