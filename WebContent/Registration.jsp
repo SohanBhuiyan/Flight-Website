@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form action="Registration" method="post">
+Register Form
+<form action=RegistrationServlet method="post">
 Username: <input type="text"  name="username">
 <br>
 Password: <input type="password" name="password">
@@ -18,4 +18,4 @@ Password: <input type="password" name="password">
 
 </form>
 </body>
-</html>
+</html> 
