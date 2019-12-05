@@ -66,7 +66,7 @@
 				out.print(result.getString("price"));
 				out.print("</td>");
 				out.print("</tr>");
-
+random
 			}
 			out.print("</table>");
 
