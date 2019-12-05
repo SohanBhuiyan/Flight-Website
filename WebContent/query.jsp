@@ -65,7 +65,7 @@
 				//Print out current price
 				out.print(result.getString("price"));
 				out.print("</td>");
-				out.print("</tr>");		testing
+				out.print("</tr>");		
 			}
 			out.print("</table>");
 
