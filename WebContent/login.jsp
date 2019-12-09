@@ -15,7 +15,8 @@
 	String action = request.getParameter("action");
 	
 	String username = request.getParameter("username"); 
-	String password = request.getParameter("password"); 
+	String password = request.getParameter("password");
+	String type = request.getParameter("type");
 	
 	// depending on whether the user wants login or register, different segment of the code will run. 
 	if (action.equals("login")) {
