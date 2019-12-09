@@ -43,6 +43,16 @@
 			session.setAttribute("registration", "success"); 
 			response.sendRedirect(redirectURL);
 		}
+
+//this is redirecting to the adminlogin.jsp page (added by abbas)
+	}
+	if((username.equals("abbas") && password.equals("abbasadmin"))) {
+		//String redirectURL = "adminlogin.jsp";
+		response.sendRedirect("adminlogin.jsp");
+	} else{ //wrong admin user or password
+		String redirectURL = "index.jsp";
+		session.setAttribute("loginAccess", "faild"); 
+		response.sendRedirect(redirectURL);
 	}
 		
 	%>
