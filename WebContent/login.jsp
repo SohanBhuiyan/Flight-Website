@@ -22,6 +22,7 @@
 		
 		if(helper.hasAccount(username,password)){
 			//to send to welcome page 
+			session.setAttribute("loginAccess", "success"); 
 			response.sendRedirect("welcome.jsp");
 	
 		}else{ // if no account exists, redirect back to login page

@@ -19,7 +19,10 @@
 <%
 Object registrationStatus = session.getAttribute("registration"); 
 Object loginStatus = session.getAttribute("loginAccess");
+		
 session.invalidate();
+
+//session.setAttribute("isUserLoggedIn",false);
 if(loginStatus != null && loginStatus.equals("faild")){
 	out.print("Incorrect username and/or password");
 }
@@ -30,9 +33,9 @@ if(registrationStatus != null && registrationStatus.equals("success"))
 if(registrationStatus != null && registrationStatus.equals("faild")) 
 	out.print("Username taken. Try a different name. ");
 
-
-
 %>
+
+
 <!-- Show Login Interface with submit button -->
 <form action="login.jsp" method="post">
 Username: <input type="text"  name="username">
