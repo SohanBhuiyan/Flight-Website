@@ -21,8 +21,6 @@
 	// depending on whether the user wants login or register, different segment of the code will run. 
 	if (action.equals("login")) {
 		
-		
-		
 		if(helper.hasAccount(username,password)){
 			String user_type = helper.getType(username); 
 			// customer page

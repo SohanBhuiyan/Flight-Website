@@ -113,7 +113,7 @@ public boolean delete(String ac_id, String al_id) {
 						+ " AND "
 						+ "al_id= " + "\'" + al_id + "\'"; 
 				
-				stmt.executeQuery(insert); 
+				stmt.executeUpdate(insert); 
 				con.close();
 
 	} catch(Exception ex){ // tells the classname::methodname when a method fails. Easier for debugging
