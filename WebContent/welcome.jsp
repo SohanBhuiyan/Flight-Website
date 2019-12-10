@@ -17,10 +17,21 @@ if(loginStatus == null || !loginStatus.equals("success")  ){
 }
 %>
 
+
 Welcome to our website
 <form action = "logout.jsp">
  <input type= "submit" value ="Logout" />
 </form>
+
+<form action = "placeholder.jsp">
+ <input type= "submit" value ="Search Flight" />
+</form>
+
+<form action = "placeholder.jsp">     
+ <input type= "submit" value ="Account History" />
+</form>
+
+
 
 </body>
 </html>
