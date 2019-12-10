@@ -8,7 +8,7 @@
 </head>
 <body>
 Register Form
-<form action=RegistrationServlet method="post">
+<form action="Register" method="post">
 Username: <input type="text"  name="username">
 <br>
 Password: <input type="password" name="password">
