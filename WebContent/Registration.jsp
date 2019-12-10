@@ -14,6 +14,7 @@ Username: <input type="text"  name="username">
 Password: <input type="password" name="password">
 <br>
 
+Type
 <select name="type">
   <option value="customer">customer</option>
   <option value="customer-rep">customer-rep</option>
