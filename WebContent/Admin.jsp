@@ -4,14 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Homepage</title>
+<title>This is a Admin Page</title>
 </head>
 <body>
-<%
-session.invalidate();
-String redirectURL = "index.jsp";
-response.sendRedirect(redirectURL);
 
-%>
+
 </body>
 </html>
