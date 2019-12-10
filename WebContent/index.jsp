@@ -44,8 +44,17 @@ Password: <input type="password" name="password">
 <br>
 <input type="submit" name="action" value="login">
 <input type="submit" name="action" value="Create new account">
+
 </form>
 
+<form action="login.jsp" method="post">
+Username: <input type="text"  name="username">
+<br>
+Password: <input type="password" name="password">
+<br>
+<input type="submit" name="action" value="login as Admin">
+
+</form>
 
 </body>
 </html>
