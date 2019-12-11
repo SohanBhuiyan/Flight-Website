@@ -22,6 +22,7 @@
 	if (action.equals("login")) {
 		
 		if(helper.hasAccount(username,password)){
+			session.setAttribute("username", username); 
 			String user_type = helper.getType(username); 
 			// customer page
 			if(user_type.equals("customer")){
