@@ -46,7 +46,6 @@ public class RepRes extends HttpServlet {
 			ps.executeUpdate(); 
 			con.close();
 
-
 		} catch(Exception ex){ // tells the classname::methodname when a method fails. Easier for debugging
 			String currMethodName = new Object() {}.getClass().getEnclosingMethod().getName(); 
 			System.out.println(this.getClass().getSimpleName() +"::" + currMethodName  + "  faild"); 

@@ -13,9 +13,9 @@ ac_id: <input type="text"  name="ac_id">
 <br>
 al_id: <input type="text" name="al_id">
 <br>
-new ac_id: <input type="text"  name="newac_id">
+new ac_id: <input type="text"  name="new_ac_id">
 <br>
-new al_id: <input type="text"  name="newal_id">
+new al_id: <input type="text"  name="new_al_id">
 <br>
 <input type="submit" name="action" value="edit">
 </form>

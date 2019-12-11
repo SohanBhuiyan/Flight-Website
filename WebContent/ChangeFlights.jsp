@@ -15,8 +15,11 @@ al_id <input type="text"  name="al_id">
 ac_id <input type="text"  name="ac_id">
 <br>
 <input type="submit" name="action" value="add">
-<input type="submit" name="action" value="edit">
 <input type="submit" name="action" value="delete">
+</form>
+
+<form action="EditFlights.jsp" method="get">
+<input type="submit" name="action" value="edit">
 </form>
 </body>
 </html>
