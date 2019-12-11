@@ -119,8 +119,11 @@ Filter
 		<br>
 		<input type="submit" name="action" value="purchase">
 		</form>
+		<br>
 		
-	
+		<form action="welcome.jsp" method="get">
+		<input type="submit" name="action" value="homepage">
+		</form>
 
 
 

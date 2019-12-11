@@ -61,7 +61,7 @@ public class PurchaseServlet extends HttpServlet {
 		ps.setString(1,username);
 		ps.setInt(2, Integer.parseInt(ticket));
 		ps.executeUpdate(); 
-		
+		con.close(); 
 		return true; 
 	}
 
