@@ -37,10 +37,17 @@ public class FlightSearchServlet extends HttpServlet {
 			ResultSet results = null; 
 			
 			Statement stmt = con.createStatement();
-			String query = "SELECT * from flights NATURAL JOIN departure NATURAL JOIN arrival WHERE "
-					+ "depart_time BETWEEN ? AND ?  "
+			String query = "SELECT * FROM tickets NATURAL JOIN flights NATURAL JOIN departure NATURAL JOIN arrival NATURAL JOIN associatedFlights"
+					+ " WHERE "
+					+ "purchase_time IS NULL  "
+					+ "AND depart_time BETWEEN ? AND ?  "
 					+ "AND depart_airport=? " 
 					+ "AND arrival_airport=?";
+			
+//			String query = "SELECT * from flights NATURAL JOIN departure NATURAL JOIN arrival WHERE "
+//					+ "depart_time BETWEEN ? AND ?  "
+//					+ "AND depart_airport=? " 
+//					+ "AND arrival_airport=?";
 			//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 			PreparedStatement ps = con.prepareStatement(query); 
 			//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
