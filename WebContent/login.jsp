@@ -33,7 +33,7 @@
 			// customer-rep page
 			}else if(user_type.equals("customer-rep")){
 				session.setAttribute("loginAccess", "success"); 
-				response.sendRedirect("customerRepDashboard.jsp");
+				response.sendRedirect("CustomerRepDashboard.jsp");
 			//
 			}else{
 				String redirectURL = "adminlogin.jsp";
