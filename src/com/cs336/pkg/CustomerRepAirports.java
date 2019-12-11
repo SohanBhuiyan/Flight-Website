@@ -75,7 +75,7 @@ public class CustomerRepAirports extends HttpServlet {
 			Statement stmt = con.createStatement();
 
 			//Make an insert statement for the Sells table:
-					String insert = "UPDATE airport set ap_id = ? WHERE ap_id = ?";
+					String insert = "UPDATE airports set ap_id = ? WHERE ap_id = ?";
 					//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 					PreparedStatement ps = con.prepareStatement(insert);
 					//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
