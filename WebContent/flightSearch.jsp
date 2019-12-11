@@ -32,6 +32,12 @@ Arrival Airport: <input type="text"  name="a_port">
 <br>
 Departure Date <input type="date"  name="d_date">
 <br>
+Filter
+<br>
+<input type="radio" name="filter" value="total_fare"> price
+<input type="radio" name="filter" value="depart_time">takeoff time
+<input type="radio" name="filter" value="arrival_time">landing time
+<br>
 <input type="submit" name="action" value="search">
 <br>
 <br>
