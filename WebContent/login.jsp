@@ -24,6 +24,7 @@
 		if(helper.hasAccount(username,password)){
 			//to send to welcome page 
 			session.setAttribute("loginAccess", "success"); 
+			session.setAttribute("loggedinuser",username);
 			response.sendRedirect("welcome.jsp");
 	
 		}else{ // if no account exists, redirect back to login page
@@ -39,14 +40,14 @@
 
 	//this is redirecting to the adminlogin.jsp page (added by abbas)
 	
-	if((username.equals("abbas") && password.equals("abbasadmin"))) {
-		//String redirectURL = "adminlogin.jsp";
-		response.sendRedirect("adminlogin.jsp");
-	} else{ //wrong admin user or password
-		String redirectURL = "index.jsp";
-		session.setAttribute("loginAccess", "faild"); 
-		response.sendRedirect(redirectURL);
-	}
+// 	if((username.equals("abbas") && password.equals("abbasadmin"))) {
+// 		//String redirectURL = "adminlogin.jsp";
+// 		response.sendRedirect("adminlogin.jsp");
+// 	} else{ //wrong admin user or password
+// 		String redirectURL = "index.jsp";
+// 		session.setAttribute("loginAccess", "faild"); 
+// 		response.sendRedirect(redirectURL);
+// 	}
 		
 	%>
 
