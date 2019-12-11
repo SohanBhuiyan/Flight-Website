@@ -4,13 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Change information for airports here</title>
 </head>
 <body>
-<form action="CustomerServlet" method="get">
-ac_id: <input type="text"  name="ac_id">
-<br>
-al_id: <input type="text" name="al_id">
+<form action="CustomerRepAirports" method="get">
+ap_id <input type="text"  name="ap_id">
 <br>
 <input type="submit" name="action" value="add">
 <input type="submit" name="action" value="edit">
