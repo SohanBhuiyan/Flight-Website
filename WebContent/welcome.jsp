@@ -23,11 +23,11 @@ Welcome to our website
  <input type= "submit" value ="Logout" />
 </form>
 
-<form action = "placeholder.jsp">
+<form action = "flightSearch.jsp">
  <input type= "submit" value ="Search Flight" />
 </form>
-
-<form action = "placeholder.jsp">     
+  
+<form action = "accountInfo.jsp">     
  <input type= "submit" value ="Account History" />
 </form>
 
