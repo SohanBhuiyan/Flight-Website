@@ -19,6 +19,7 @@ public class RepRes extends HttpServlet {
 		String username = request.getParameter("username"); 
 		String tid = request.getParameter("tid"); 
 		add(username, tid);
+		response.sendRedirect("MakeFlightRes.jsp");
 		
 	}
 
@@ -36,14 +37,14 @@ public class RepRes extends HttpServlet {
 			Statement stmt = con.createStatement();
 
 			//Make an insert statement for the Sells table:
-					String insert = "INSERT INTO Reserves values (?,?)";
-					//Create a Prepared SQL statement allowing you to introduce the parameters of the query
-					PreparedStatement ps = con.prepareStatement(insert);
-					//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
-					ps.setString(1, username);
-					ps.setInt(2, Integer.parseInt(tid)); 
-					ps.executeUpdate();
-					con.close();
+			// update Reserve table with username and their purchased ticket's tid
+			String reserveQuery = "INSERT INTO Reserves VALUES(?,?)"; 
+			PreparedStatement ps = con.prepareStatement(reserveQuery); 
+			ps = con.prepareStatement(reserveQuery); 
+			ps.setString(1,username);
+			ps.setInt(2, Integer.parseInt(tid));
+			ps.executeUpdate(); 
+			con.close();
 
 		} catch(Exception ex){ // tells the classname::methodname when a method fails. Easier for debugging
 			String currMethodName = new Object() {}.getClass().getEnclosingMethod().getName(); 
