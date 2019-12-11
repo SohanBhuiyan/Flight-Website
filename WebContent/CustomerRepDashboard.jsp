@@ -16,4 +16,4 @@
 	<li><a href="WaitingListPass.jsp">List of passengers who are on the waiting list</a></li>
 </ul>
 </body>
-</html>
+</html> 
