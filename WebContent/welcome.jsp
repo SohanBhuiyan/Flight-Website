@@ -26,8 +26,8 @@ Welcome to our website
 <form action = "flightSearch.jsp">
  <input type= "submit" value ="Search Flight" />
 </form>
-s
-<form action = "placeholder.jsp">     
+  
+<form action = "accountInfo.jsp">     
  <input type= "submit" value ="Account History" />
 </form>
 
