@@ -1,10 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Customer Representative Dashboard</title>
+<title>Insert title here</title>
 </head>
 <body>
 <ul>
@@ -15,5 +13,7 @@
 	<li><a href="EditFlightRes.jsp">Edit flight reservations for users</a></li>
 	<li><a href="WaitingListPass.jsp">List of passengers who are on the waiting list</a></li>
 </ul>
+
 </body>
 </html> 
+</html>
