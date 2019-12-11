@@ -19,16 +19,16 @@
 	String type = request.getParameter("type");
 	
 	// depending on whether the user wants login or register, different segment of the code will run. 
-	if (action.equals("login")) {
-		
-		
+		if (action.equals("login")) {
 		
 		if(helper.hasAccount(username,password)){
+			session.setAttribute("username", username); 
 			String user_type = helper.getType(username); 
 			// customer page
 			if(user_type.equals("customer")){
 				//to send to welcome page 
 				session.setAttribute("loginAccess", "success"); 
+				session.setAttribute("loggedinuser",username);
 				response.sendRedirect("welcome.jsp");
 			// customer-rep page
 			}else if(user_type.equals("customer-rep")){
@@ -46,7 +46,7 @@
 			session.setAttribute("loginAccess", "faild"); 
 			response.sendRedirect(redirectURL);
 		}
-	} else if (action.equals("Create new account")) {
+	}else if (action.equals("Create new account")) {
 				// user clicked create new acccount
 				String redirectURL = "Registration.jsp";
 				response.sendRedirect(redirectURL);
@@ -54,6 +54,7 @@
 
 /**	//this is redirecting to the adminlogin.jsp page (added by abbas)
 	
+
 	if((username.equals("abbas") && password.equals("abbasadmin"))) {
 		//String redirectURL = "adminlogin.jsp";
 		response.sendRedirect("adminlogin.jsp");
@@ -63,6 +64,7 @@
 		response.sendRedirect(redirectURL);
 	}
 */ 
+
 	%>
 
 

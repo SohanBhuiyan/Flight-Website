@@ -52,4 +52,34 @@
     <servlet-name>RepRes</servlet-name>
     <url-pattern>/RepRes</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FlightSearchServlet</display-name>
+    <servlet-name>FlightSearchServlet</servlet-name>
+    <servlet-class>com.cs336.pkg.FlightSearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FlightSearchServlet</servlet-name>
+    <url-pattern>/FlightSearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PurchaseServlet</display-name>
+    <servlet-name>PurchaseServlet</servlet-name>
+    <servlet-class>com.cs336.pkg.PurchaseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PurchaseServlet</servlet-name>
+    <url-pattern>/PurchaseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RemoveReservationServlet</display-name>
+    <servlet-name>RemoveReservationServlet</servlet-name>
+    <servlet-class>com.cs336.pkg.RemoveReservationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveReservationServlet</servlet-name>
+    <url-pattern>/removeReservation</url-pattern>
+  </servlet-mapping>
 </web-app>

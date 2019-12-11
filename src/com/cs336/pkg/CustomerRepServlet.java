@@ -115,12 +115,15 @@ public boolean delete(String ac_id, String al_id) {
 
 		//Make an insert statement for the Sells table:
 				String insert = "DELETE FROM aircrafts WHERE ac_id = ? AND al_id = ? ";
-				
+
 				PreparedStatement ps = con.prepareStatement(insert);
 				//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
 				ps.setString(1, ac_id);
 				ps.setString(2, al_id); 
 				ps.executeUpdate();
+
+				stmt.executeUpdate(insert); 
+
 				con.close();
 
 	} catch(Exception ex){ // tells the classname::methodname when a method fails. Easier for debugging

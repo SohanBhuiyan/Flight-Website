@@ -23,12 +23,18 @@ Welcome to our website
  <input type= "submit" value ="Logout" />
 </form>
 
-<form action = "placeholder.jsp">
+<form action = "flightSearch.jsp">
  <input type= "submit" value ="Search Flight" />
 </form>
-
-<form action = "placeholder.jsp">     
+  
+<form action = "accountInfo.jsp">     
  <input type= "submit" value ="Account History" />
+</form>
+
+<form action = "removeReservation">     
+ Enter ticket you want to cancle <input type= "text" name="tid" />
+ <br>
+ <input type= "submit" value ="Remove Reservation" />
 </form>
 
 
