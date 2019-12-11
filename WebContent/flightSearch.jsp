@@ -26,8 +26,10 @@ Arrival Airport: <input type="text"  name="a_port">
 <br>
 Departure Date <input type="date"  name="d_date">
 <br>
-<input type="submit" name="action" value="login as Admin">
-
+<input type="submit" name="action" value="search">
+<br>
+<br>
+</form>
 <!-- check if we got the results from the form above -->
 <%
 	ResultSet results = null; 
@@ -41,9 +43,15 @@ Departure Date <input type="date"  name="d_date">
 			//make a row
 			out.print("<tr>");
 			//make column headers
-			out.print("<th> flight_number </th>");
-			out.print("<th> al_id </th>");
-			out.print("<th> ac_id </th>");
+			out.print("<th> ticket </th>");
+			out.print("<th> airline </th>");
+			out.print("<th> depart date</th>");
+			out.print("<th> depart time</th>");
+			out.print("<th> landing date </th>");
+			out.print("<th> landing time </th>");
+			out.print("<th> class </th>");
+			out.print("<th> aircraft </th>");
+			out.print("<th> price </th>");
 			
 			out.print("</tr>"); 
 			while (results.next()) {
@@ -51,7 +59,7 @@ Departure Date <input type="date"  name="d_date">
 				out.print("<tr>");
 				//make a column
 				out.print("<td>");
-				out.print(results.getString("flight_number"));
+				out.print(results.getString("tid"));
 				out.print("</td>");
 				
 				out.print("<td>");
@@ -59,28 +67,48 @@ Departure Date <input type="date"  name="d_date">
 				out.print("</td>");
 				
 				out.print("<td>");
+				out.print(results.getDate("depart_time"));
+				out.print("</td>");
+				
+				out.print("<td>");
+				out.print(results.getTime("depart_time"));
+				out.print("</td>");
+				
+				out.print("<td>");
+				out.print(results.getDate("arrival_time"));
+				out.print("</td>");
+				
+				out.print("<td>");
+				out.print(results.getTime("arrival_time"));
+				out.print("</td>");
+				
+				out.print("<td>");
+				out.print(results.getString("class"));
+				out.print("</td>");
+				
+				out.print("<td>");
 				out.print(results.getString("ac_id"));
+				out.print("</td>");
+				
+				out.print("<td>");
+				out.print(results.getDouble("total_fare"));
 				out.print("</td>");
 				
 				out.print("</tr>"); // close row
 			}
 			out.print("</table>");
-			// some extra space
 			out.print("<br>");
-			out.print("<br>");
-			
-			out.print("<form action=\"login.jsp\" method=\"get\">");
-			out.print("<br>"); 
-			out.print("Flight Number: "); 
-			out.print("<input type=\"text\"  name=\"flight_num\">"); 
-			out.print("<input type=\"submit\" name=\"action\" value=\"purchase\">"); 
-		
 	}	
+%>			
+		<form action="index.jsp" method="get">
+		Enter ticket number to purchase it
+		<br>
+		Ticket Number: <input type="text" placeholder="wait for tickets" name="ticket_num">
+		<br>
+		<input type="submit" name="action" value="purchase">
+		</form>
+		
 	
-	
-%>
-
-</form>
 
 
 
