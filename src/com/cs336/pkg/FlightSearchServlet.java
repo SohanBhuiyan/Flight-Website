@@ -19,7 +19,9 @@ public class FlightSearchServlet extends HttpServlet {
 		String depart_airport = request.getParameter("d_port"); 
 		String arrival_airport = request.getParameter("a_port"); 
 		String depart_date = request.getParameter("d_date"); 
-		ResultSet res = getFlightsByDeparture(depart_airport,arrival_airport,depart_date); 
+		String filter = request.getParameter("filter"); 
+		
+		ResultSet res = getFlightsByDeparture(depart_airport,arrival_airport,depart_date,filter); 
 		
 		request.getSession().setAttribute("results", res);
 		RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/flightSearch.jsp");
@@ -28,21 +30,33 @@ public class FlightSearchServlet extends HttpServlet {
 	}
 	
 	
-	private ResultSet getFlightsByDeparture(String depart_airport,String arrival_airport,String depart_date){
+	private ResultSet getFlightsByDeparture(String depart_airport,String arrival_airport,String depart_date, String filter){
 		
 		try {
 			//connection setup
 			ApplicationDB db = new ApplicationDB();	
 			Connection con = db.getConnection();
 			ResultSet results = null; 
-			
 			Statement stmt = con.createStatement();
-			String query = "SELECT * FROM tickets NATURAL JOIN flights NATURAL JOIN departure NATURAL JOIN arrival NATURAL JOIN associatedFlights"
-					+ " WHERE "
-					+ "purchase_time IS NULL  "
-					+ "AND depart_time BETWEEN ? AND ?  "
-					+ "AND depart_airport=? " 
-					+ "AND arrival_airport=?";
+			
+			String query = ""; 
+			if(filter == null || filter.isEmpty()) {
+				 query = "SELECT * FROM tickets NATURAL JOIN flights NATURAL JOIN departure NATURAL JOIN arrival NATURAL JOIN associatedFlights"
+						+ " WHERE "
+						+ "purchase_time IS NULL  "
+						+ "AND depart_time BETWEEN ? AND ?  "
+						+ "AND depart_airport=? " 
+						+ "AND arrival_airport=?";
+			}else {
+				 query = "SELECT * FROM tickets NATURAL JOIN flights NATURAL JOIN departure NATURAL JOIN arrival NATURAL JOIN associatedFlights"
+						+ " WHERE "
+						+ "purchase_time IS NULL  "
+						+ "AND depart_time BETWEEN ? AND ?  "
+						+ "AND depart_airport=? " 
+						+ "AND arrival_airport=? "
+						+ "ORDER BY " + filter; 
+			}
+		
 			
 //			String query = "SELECT * from flights NATURAL JOIN departure NATURAL JOIN arrival WHERE "
 //					+ "depart_time BETWEEN ? AND ?  "
@@ -55,9 +69,9 @@ public class FlightSearchServlet extends HttpServlet {
 			ps.setString(2, depart_date+" 23:59:59");
 			ps.setString(3, depart_airport);
 			ps.setString(4, arrival_airport);
-			
 
 			results = ps.executeQuery(); 
+		
 			return results; 
 		} catch (SQLException e) {
 			String currMethodName = new Object() {}.getClass().getEnclosingMethod().getName(); 
