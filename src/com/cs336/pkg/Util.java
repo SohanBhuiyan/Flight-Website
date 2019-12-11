@@ -100,6 +100,27 @@ public class Util {
 		return false; 
 
 	}
+	
+	public String getType(String username) throws SQLException {
+		String type = ""; 
+		
+		ApplicationDB db = new ApplicationDB();	
+		Connection con = db.getConnection();
+		Statement stmt = con.createStatement();
+
+		String query = "SELECT type FROM users WHERE username = \'" + username + "\'" ; 
+
+		//Array of instances retrivied by the query
+		ResultSet result = stmt.executeQuery(query); 
+
+		while(result.next()){ // we have an entry in our ResultSet
+			type = result.getString("type"); 
+		}
+		
+		return type; 
+		
+		
+	}
 
 
 
