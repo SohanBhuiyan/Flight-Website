@@ -12,46 +12,60 @@
 Available flights:
 <form method="post">
 
-<table border="2">
-   <tr>
-        <td>Departure airport</td>
-        <td>Arrival airport</td>
-        <td>Departure time</td>
-        <td>Arrival time</td>
-        <td>Type</td>
-   </tr>
-<%
-try{
-List<String> list = new ArrayList<String>();
-
-ApplicationDB db = new ApplicationDB();	
-Connection con = db.getConnection();
-
-//Create a SQL statement
-Statement stmt = con.createStatement();
-
-//Get parameters from the HTML form at the index.jsp
-String newBar = request.getParameter("dair");
-String newBeer = request.getParameter("aair");
-float price = Float.valueOf(request.getParameter("ddate"));
-
-
-//Make an insert statement for the Sells table:
-String query = "SELECT * FROM flight";
-//Create a Prepared SQL statement allowing you to introduce the parameters of the query
-PreparedStatement ps = con.prepareStatement(query);
-
-//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
-//ps.setString(1, newBar);
-//ps.executeUpdate();
-con.close();
-out.print("Success");
-
-} catch (Exception ex) {
-out.print(ex);
-out.print("Fail");
-}
-%>
+ <table width="100%" border="1">
+    <%
+    if(request.getSession().getAttribute("loginAccess")==null){
+    	response.sendRedirect("index.jsp");
+    }
+    String username = (String) request.getSession().getAttribute("loggedinuser");
+    ApplicationDB db=new ApplicationDB();
+    Connection con=db.getConnection();
+   // String dAirport = request.getParameter("dair");
+	//String aAirport = request.getParameter("aair");
+	//String depTime = request.getParameter("ddate");
+	//String arrTime = request.getParameter("adate");
+	//String type = request.getParameter("type");
+    PreparedStatement ps=con.prepareStatement("SELECT * FROM flights);
+  //  ps.setString(1,username);
+  
+    ResultSet r=ps.executeQuery();
+        ResultSetMetaData metaData = r.getMetaData();
+        %>
+        <tr>
+        <td>
+        Arrival Airport
+        </td>
+         <td>
+        Arrival Time
+        </td>
+         <td>
+        Seat Number
+        </td>
+         <td>
+        Departing Airport
+        </td>
+         <td>
+        Departure Time
+        </td>	
+        </tr>
+        <% 
+        while(r.next())
+        {
+            %>
+                <tr>
+                 <%
+                 for(int i = 1; i<=metaData.getColumnCount();i++)
+                    { %>
+                     <td>
+                     <%= r.getString(i)%>
+                     </td>
+                <% 
+                    }
+                %>                   
+                </tr>
+            <% 
+        }
+    %>
 
 
 </form>
