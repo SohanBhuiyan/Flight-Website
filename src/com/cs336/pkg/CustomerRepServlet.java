@@ -19,8 +19,8 @@ public class CustomerRepServlet extends HttpServlet {
 		String action = request.getParameter("action"); 
 		String ac_id = request.getParameter("ac_id"); 
 		String al_id = request.getParameter("al_id"); 
-		String new_ac_id = request.getParameter("newac_id");
-		String new_al_id = request.getParameter("newal_id");
+		String new_ac_id = request.getParameter("new_ac_id");
+		String new_al_id = request.getParameter("new_al_id");
 		switch(action) {
 		case "add": 
 			add(ac_id,al_id);
@@ -89,10 +89,10 @@ public boolean edit(String ac_id, String al_id, String new_ac_id, String new_al_
 					//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 					PreparedStatement ps = con.prepareStatement(insert);
 					//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
-					ps.setInt(1, Integer.parseInt(ac_id));
-					ps.setString(2, al_id); 
-					ps.setInt(3, Integer.parseInt(new_ac_id));
-					ps.setString(4, new_al_id); 
+					ps.setInt(1, Integer.parseInt(new_ac_id));
+					ps.setString(2, new_al_id); 
+					ps.setInt(3, Integer.parseInt(ac_id));
+					ps.setString(4, al_id); 
 					ps.executeUpdate();
 					con.close();
 

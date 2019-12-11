@@ -4,19 +4,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Change information for airports here</title>
+<title>Airport Info Edit</title>
 </head>
 <body>
+Edit aircrafts here
 <form action="CustomerRepAirports" method="get">
-ap_id <input type="text"  name="ap_id">
+ap_id: <input type="text"  name="ap_id">
 <br>
-<input type="submit" name="action" value="add">
-<input type="submit" name="action" value="delete">
-</form>
-
-<form action="EditAirport.jsp" method="get">
+new ap_id: <input type="text"  name="new_ap_id">
+<br>
 <input type="submit" name="action" value="edit">
 </form>
-
 </body>
 </html>

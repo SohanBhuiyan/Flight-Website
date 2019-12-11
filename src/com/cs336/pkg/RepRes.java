@@ -36,12 +36,12 @@ public class RepRes extends HttpServlet {
 			Statement stmt = con.createStatement();
 
 			//Make an insert statement for the Sells table:
-					String insert = "INSERT INTO Reserves NATURAL JOIN tickets where values (?,?)";
+					String insert = "INSERT INTO Reserves values (?,?)";
 					//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 					PreparedStatement ps = con.prepareStatement(insert);
 					//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
 					ps.setString(1, username);
-					ps.setString(2, tid); 
+					ps.setInt(2, Integer.parseInt(tid)); 
 					ps.executeUpdate();
 					con.close();
 

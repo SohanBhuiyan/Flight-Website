@@ -18,13 +18,14 @@ public class CustomerRepAirports extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action"); 
 		String ap_id = request.getParameter("ap_id"); 
+		String new_ap_id = request.getParameter("new_ap_id"); 
 		
 		switch(action) {
 		case "add": 
 			add(ap_id);
 			break; 
 		case "edit":
-			//edit(ac_id,al_id,new_ac_id, new_al_id);
+			edit(ap_id, new_ap_id);
 			break;
 		case "delete":
 			delete(ap_id);
@@ -65,7 +66,7 @@ public class CustomerRepAirports extends HttpServlet {
 		
 		return true; 
 	}
-	public boolean edit(String ac_id, String al_id) {
+	public boolean edit(String ap_id, String new_ap_id) {
 		
 		try{
 			//connection setup
@@ -74,13 +75,12 @@ public class CustomerRepAirports extends HttpServlet {
 			Statement stmt = con.createStatement();
 
 			//Make an insert statement for the Sells table:
-					String insert = "INSERT INTO aircrafts(ac_id,al_id)"
-							+ "VALUES (?,?)";
+					String insert = "UPDATE airport set ap_id = ? WHERE ap_id = ?";
 					//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 					PreparedStatement ps = con.prepareStatement(insert);
 					//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
-					ps.setString(1, ac_id);
-					ps.setString(2, al_id); 
+					ps.setString(1, new_ap_id);
+					ps.setString(2, ap_id); 
 					ps.executeUpdate();
 					con.close();
 
