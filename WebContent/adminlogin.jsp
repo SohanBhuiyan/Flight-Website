@@ -10,7 +10,7 @@
 <h1 align="center">Welcome Admin</h1>
 
 <ul>
-	<li><a href="Edit_info.jsp">Edit user info</a></li>
+	<li><a href="edit_info.jsp">Edit user info</a></li>
 	<li><a href="salesreport.jsp">sales report for a particular month</a></li>
 	<li><a href="reservations.jsp">List of Reservation</a></li>
 	<li><a href="Sum_revenue.jsp">Summary of revenue generated</a></li>

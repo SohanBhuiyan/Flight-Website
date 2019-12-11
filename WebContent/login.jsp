@@ -52,7 +52,6 @@
 				response.sendRedirect(redirectURL);
 	} 
 	//this is redirecting to the adminlogin.jsp page (added by abbas)
-	
 	if((username.equals("abbas") && password.equals("abbasadmin"))) {
 		//String redirectURL = "adminlogin.jsp";
 		response.sendRedirect("adminlogin.jsp");
@@ -61,7 +60,7 @@
 		session.setAttribute("loginAccess", "faild"); 
 		response.sendRedirect(redirectURL);
 	}
- 
+
 	%>
 
 
