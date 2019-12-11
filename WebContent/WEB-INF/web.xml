@@ -20,7 +20,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>CustomerRepServlet</servlet-name>
-    <url-pattern>/CustomerServlet</url-pattern>
+    <url-pattern>/CustomerRepServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

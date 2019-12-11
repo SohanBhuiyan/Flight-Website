@@ -8,7 +8,7 @@
 </head>
 <body>
 Edit aircrafts here
-<form action="CustomerServlet" method="get">
+<form action="CustomerRepServlet" method="get">
 ac_id: <input type="text"  name="ac_id">
 <br>
 al_id: <input type="text" name="al_id">
@@ -17,7 +17,7 @@ new ac_id: <input type="text"  name="newac_id">
 <br>
 new al_id: <input type="text"  name="newal_id">
 <br>
-<input type="submit" name="action" value="publish edit">
+<input type="submit" name="action" value="edit">
 </form>
 </body>
 </html>
