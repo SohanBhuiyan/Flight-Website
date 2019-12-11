@@ -23,7 +23,7 @@ Welcome to our website
  <input type= "submit" value ="Logout" />
 </form>
 
-<form action = "placeholder.jsp">
+<form action = "searchPage.jsp">
  <input type= "submit" value ="Search Flight" />
 </form>
 

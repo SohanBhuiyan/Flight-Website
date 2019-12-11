@@ -24,7 +24,7 @@ public class RegistrationServlet extends HttpServlet {
 		String password = request.getParameter("password"); 
 		String type = request.getParameter("type"); 
 
-		if(action != null){
+		if(action != null){ 
 
 			if(helper.containsUsername(username)){
 				out.print("Account Exist, try again");
