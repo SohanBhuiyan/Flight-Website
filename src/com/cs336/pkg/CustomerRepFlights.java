@@ -78,18 +78,36 @@ public boolean add(String flight_number, String al_id, String ac_id) {
 			ApplicationDB db = new ApplicationDB();	
 			Connection con = db.getConnection();
 			Statement stmt = con.createStatement();
-
+			String query = ""; 
 			//Make an insert statement for the Sells table:
-					String insert = "UPDATE flights set flight_number = ?, al_id =?, ac_id = ? WHERE flight_number = ? AND al_id = ? AND ac_id = ?";
+					query = "UPDATE flights set flight_number = ?, al_id =?, ac_id = ? WHERE flight_number = ? AND al_id = ? AND ac_id = ?";
 					//Create a Prepared SQL statement allowing you to introduce the parameters of the query
-					PreparedStatement ps = con.prepareStatement(insert);
+					PreparedStatement ps = con.prepareStatement(query);
 					//Add parameters of the query. Start with 1, the 0-parameter is the INSERT statement itself
-					ps.setInt(1, Integer.parseInt(new_flight_number));
-					ps.setString(2, new_al_id); 
-					ps.setInt(3, Integer.parseInt(new_ac_id)); 
+
 					ps.setInt(4, Integer.parseInt(flight_number)); 
 					ps.setString(5, al_id); 
 					ps.setInt(6, Integer.parseInt(ac_id)); 
+					
+					
+					if(new_flight_number == null || new_flight_number.isEmpty()) {
+						ps.setInt(1, Integer.parseInt(flight_number)); 
+					}else {
+						ps.setInt(1, Integer.parseInt(new_flight_number));
+					}
+					
+					if(new_al_id == null || new_al_id.isEmpty()) {
+						ps.setString(2, al_id);
+					}else {
+						ps.setString(2, new_al_id);
+					}
+					
+					if(new_ac_id == null || new_ac_id.isEmpty()) {
+						ps.setInt(3, Integer.parseInt(ac_id)); 
+					}else {
+						ps.setInt(3, Integer.parseInt(new_ac_id));
+					}
+					
 					System.out.println(ps.toString());
 					ps.executeUpdate();
 					con.close();
@@ -112,7 +130,7 @@ public boolean add(String flight_number, String al_id, String ac_id) {
 			Statement stmt = con.createStatement();
 
 			//Make an insert statement for the Sells table:
-			String insert = "DELETE FROM flights WHERE flight_number = ?, al_id =?, ac_id = ? ";
+			String insert = "DELETE FROM flights WHERE flight_number = ? AND al_id =? AND ac_id = ? ";
 			
 					//Create a Prepared SQL statement allowing you to introduce the parameters of the query
 					PreparedStatement ps = con.prepareStatement(insert);
@@ -120,6 +138,8 @@ public boolean add(String flight_number, String al_id, String ac_id) {
 					ps.setString(1, flight_number);
 					ps.setString(2, al_id);
 					ps.setString(3, ac_id);
+					
+					System.out.println(ps.toString());
 					ps.executeUpdate();
 					con.close();
 
