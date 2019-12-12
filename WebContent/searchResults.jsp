@@ -21,8 +21,7 @@ Available flights:
     ApplicationDB db=new ApplicationDB();
     Connection con=db.getConnection();
     PreparedStatement ps=con.prepareStatement("SELECT * FROM flights INNER JOIN departure"); 
-	//PreparedStatement ps=con.prepareStatement("SELECT  arrival_airport, arrival_time, seat_number, depart_airport, depart_time  FROM departure NATURAL JOIN arrival NATURAL JOIN flights NATURAL JOIN associatedFlights NATURAL JOIN Reserves where username=? ORDER BY arrival_time DESC");
-  //  ps.setString(1,username);
+	
   
     ResultSet r=ps.executeQuery();
         ResultSetMetaData metaData = r.getMetaData();
