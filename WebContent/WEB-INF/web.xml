@@ -82,4 +82,14 @@
     <servlet-name>RemoveReservationServlet</servlet-name>
     <url-pattern>/removeReservation</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RepEditRes</display-name>
+    <servlet-name>RepEditRes</servlet-name>
+    <servlet-class>com.cs336.pkg.RepEditRes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RepEditRes</servlet-name>
+    <url-pattern>/RepEditRes</url-pattern>
+  </servlet-mapping>
 </web-app>
