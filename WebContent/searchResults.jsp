@@ -20,11 +20,6 @@ Available flights:
     String username = (String) request.getSession().getAttribute("loggedinuser");
     ApplicationDB db=new ApplicationDB();
     Connection con=db.getConnection();
-   // String dAirport = request.getParameter("dair");
-	//String aAirport = request.getParameter("aair");
-	//String depTime = request.getParameter("ddate");
-	//String arrTime = request.getParameter("adate");
-	//String type = request.getParameter("type");
     PreparedStatement ps=con.prepareStatement("SELECT * FROM flights INNER JOIN departure"); 
 	//PreparedStatement ps=con.prepareStatement("SELECT  arrival_airport, arrival_time, seat_number, depart_airport, depart_time  FROM departure NATURAL JOIN arrival NATURAL JOIN flights NATURAL JOIN associatedFlights NATURAL JOIN Reserves where username=? ORDER BY arrival_time DESC");
   //  ps.setString(1,username);
