@@ -20,7 +20,37 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>CustomerRepServlet</servlet-name>
-    <url-pattern>/CustomerServlet</url-pattern>
+    <url-pattern>/CustomerRepServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerRepAirports</display-name>
+    <servlet-name>CustomerRepAirports</servlet-name>
+    <servlet-class>com.cs336.pkg.CustomerRepAirports</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerRepAirports</servlet-name>
+    <url-pattern>/CustomerRepAirports</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CustomerRepFlights</display-name>
+    <servlet-name>CustomerRepFlights</servlet-name>
+    <servlet-class>com.cs336.pkg.CustomerRepFlights</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerRepFlights</servlet-name>
+    <url-pattern>/CustomerRepFlights</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RepRes</display-name>
+    <servlet-name>RepRes</servlet-name>
+    <servlet-class>com.cs336.pkg.RepRes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RepRes</servlet-name>
+    <url-pattern>/RepRes</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -34,22 +64,32 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ListReserves</display-name>
-    <servlet-name>ListReserves</servlet-name>
-    <servlet-class>com.cs336.pkg.ListReserves</servlet-class>
+    <display-name>PurchaseServlet</display-name>
+    <servlet-name>PurchaseServlet</servlet-name>
+    <servlet-class>com.cs336.pkg.PurchaseServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ListReserves</servlet-name>
-    <url-pattern>/ListReserves</url-pattern>
+    <servlet-name>PurchaseServlet</servlet-name>
+    <url-pattern>/PurchaseServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>AdminServlet</display-name>
-    <servlet-name>AdminServlet</servlet-name>
-    <servlet-class>com.cs336.pkg.AdminServlet</servlet-class>
+    <display-name>RemoveReservationServlet</display-name>
+    <servlet-name>RemoveReservationServlet</servlet-name>
+    <servlet-class>com.cs336.pkg.RemoveReservationServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AdminServlet</servlet-name>
-    <url-pattern>/AdminServlet</url-pattern>
+    <servlet-name>RemoveReservationServlet</servlet-name>
+    <url-pattern>/removeReservation</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RepEditRes</display-name>
+    <servlet-name>RepEditRes</servlet-name>
+    <servlet-class>com.cs336.pkg.RepEditRes</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RepEditRes</servlet-name>
+    <url-pattern>/RepEditRes</url-pattern>
   </servlet-mapping>
 </web-app>

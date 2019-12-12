@@ -16,7 +16,13 @@ table, th, td {
 
 <body>
 
-
+<!--below java code will run when a transaction has been made -->
+<%
+Object purchase_status = session.getAttribute("purchase_status");
+if(purchase_status != null && purchase_status.equals("success")){
+	out.print("purchase success"); 
+}
+%>
 
 <form action="FlightSearchServlet" method="get">
 
@@ -25,6 +31,12 @@ Depart Airport: <input type="text"  name="d_port">
 Arrival Airport: <input type="text"  name="a_port">
 <br>
 Departure Date <input type="date"  name="d_date">
+<br>
+Filter
+<br>
+<input type="radio" name="filter" value="total_fare"> price
+<input type="radio" name="filter" value="depart_time">takeoff time
+<input type="radio" name="filter" value="arrival_time">landing time
 <br>
 <input type="submit" name="action" value="search">
 <br>
@@ -100,15 +112,18 @@ Departure Date <input type="date"  name="d_date">
 			out.print("<br>");
 	}	
 %>			
-		<form action="index.jsp" method="get">
+		<form action="PurchaseServlet" method="get">
 		Enter ticket number to purchase it
 		<br>
 		Ticket Number: <input type="text" placeholder="wait for tickets" name="ticket_num">
 		<br>
 		<input type="submit" name="action" value="purchase">
 		</form>
+		<br>
 		
-	
+		<form action="welcome.jsp" method="get">
+		<input type="submit" name="action" value="homepage">
+		</form>
 
 
 
