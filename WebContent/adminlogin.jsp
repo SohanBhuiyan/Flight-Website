@@ -16,7 +16,7 @@
 	<li><a href="Sum_revenue.jsp">Summary of revenue generated</a></li>
 	<li><a href="Cus_revenue.jsp">Customer generating most revenue</a></li>
 	<li><a href="active_flights.jsp">Most active flights</a></li>
-	<li><a href="flights_airports.jsp">List of all Flights</a></li>
+	<li><a href="allflights.jsp">List of all Flights</a></li>
 </ul>
 
 
